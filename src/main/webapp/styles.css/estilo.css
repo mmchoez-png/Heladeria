@@ -1,0 +1,354 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 9 nov 2025, 5:47:38 p. m.
+    Author     : Windows
+*/
+/* ==========================
+   ESTILO GENERAL SWEET ICE 🍦
+   ========================== */
+
+:root {
+    --rosa: #ffc8dd;
+    --rosa-fuerte: #ff8fab;
+    --celeste: #bde0fe;
+    --lila: #cdb4db;
+    --crema: #fff0f5;
+    --texto: #444;
+    --blanco: #ffffff;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: var(--crema);
+    color: var(--texto);
+}
+
+/* ==========================
+   ENCABEZADO Y MENÚ
+   ========================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--rosa);
+    padding: 15px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 60px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 1.8em;
+    color: #d94f70;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: var(--rosa-fuerte);
+    color: var(--blanco);
+}
+
+/* ==========================
+   BANNER PRINCIPAL
+   ========================== */
+
+.banner {
+    background-image: url('../img/presentacion.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 130px 20px;
+    position: relative;
+    color: var(--blanco);
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.banner-texto {
+    position: relative;
+    z-index: 1;
+}
+
+.banner-texto h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.banner-texto p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+.boton {
+    background-color: var(--rosa-fuerte);
+    color: var(--blanco);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: #d94f70;
+}
+
+/* ==========================
+   SECCIONES DE CONTENIDO
+   ========================== */
+
+.presentacion, .historia, .productos {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--blanco);
+    margin: 40px auto;
+    border-radius: 20px;
+    width: 85%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.presentacion h2, .historia h2, .productos h2 {
+    color: #d94f70;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.presentacion p, .historia p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ==========================
+   CATÁLOGO DE PRODUCTOS
+   ========================== */
+
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    justify-items: center;
+}
+
+.producto {
+    background-color: var(--celeste);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+}
+
+.producto img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid var(--blanco);
+}
+
+.producto h3 {
+    color: #d94f70;
+    margin-bottom: 10px;
+}
+
+/* ==========================
+   FORMULARIOS (LOGIN / REGISTRO)
+   ========================== */
+
+.formulario {
+    max-width: 400px;
+    margin: 70px auto;
+    background-color: var(--blanco);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.formulario h2 {
+    text-align: center;
+    color: #d94f70;
+    margin-bottom: 25px;
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.formulario input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid var(--rosa);
+    border-radius: 10px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.formulario input:focus {
+    border-color: var(--rosa-fuerte);
+}
+
+.formulario button {
+    background-color: var(--rosa-fuerte);
+    color: var(--blanco);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.formulario button:hover {
+    background-color: #d94f70;
+}
+
+.formulario p {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.formulario a {
+    color: var(--rosa-fuerte);
+    text-decoration: none;
+}
+
+.formulario a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================
+   PIE DE PÁGINA
+   ========================== */
+
+footer {
+    background-color: var(--rosa);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    margin-top: 60px;
+    color: var(--texto);
+}
+
+/* ==========================
+   ADAPTACIÓN RESPONSIVA
+   ========================== */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .banner-texto h2 {
+        font-size: 1.8em;
+    }
+
+    .formulario {
+        width: 90%;
+    }
+}
+
+/* ==========================
+   SECCIÓN HISTORIA
+   ========================== */
+
+.historia-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.historia-texto {
+    flex: 1 1 400px;
+    text-align: justify;
+    line-height: 1.7;
+    color: var(--texto);
+}
+
+.historia-imagen img {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.historia-imagen img:hover {
+    transform: scale(1.03);
+}
+
+/* Adaptación móvil */
+@media (max-width: 768px) {
+    .historia-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .historia-texto {
+        text-align: center;
+    }
+
+    .historia-imagen img {
+        max-width: 100%;
+    }
+}
