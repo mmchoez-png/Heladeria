@@ -17,7 +17,7 @@ import java.sql.SQLException;
 
 public class ConexionBD {
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/sweetice"; 
+    private static final String URL = "jdbc:postgresql://localhost:5432/bdHeladeria"; 
     private static final String USER = "postgres";  // Tu usuario de PostgreSQL
     private static final String PASSWORD = "Admin123"; // Tu contraseña de PostgreSQL
 

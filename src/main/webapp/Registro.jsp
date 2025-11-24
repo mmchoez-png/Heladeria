@@ -5,7 +5,7 @@
     <title>Registro - Sweet Ice 🍦</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css/estilo.css">
+    <link rel="stylesheet" href="styles/estilo.css">
 </head>
 <body>
     <!-- ======= ENCABEZADO ======= -->
@@ -17,9 +17,9 @@
 
         <nav>
             <ul>
-                <li><a href="Presentación.jsp">Inicio</a></li>
-                <li><a href="Productos.jsp">Productos</a></li>
-                <li><a href="Historia.jsp">Historia</a></li>
+                <li><a href="Presentacion.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Historia.html">Historia</a></li>
                 <li><a href="Login.jsp">Iniciar Sesión</a></li>
                 <li><a href="Registro.jsp" class="active">Registrarse</a></li>
             </ul>

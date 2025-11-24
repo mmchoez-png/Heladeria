@@ -1,0 +1,191 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 9 nov 2025, 8:30:41 p. m.
+    Author     : Windows
+*/
+
+/* =======================================================
+   ESTILO PANEL DE USUARIO - HELADERÍA SWEET ICE 🍦
+   ======================================================= */
+
+:root {
+    --rosa: #ffb6c1;
+    --rosa-fuerte: #ff6f91;
+    --celeste: #bde0fe;
+    --lila: #cdb4db;
+    --crema: #fff7f9;
+    --texto: #444;
+    --blanco: #ffffff;
+    --sombra: rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================
+   ESTILO GLOBAL
+   ========================== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffe5ec, #bde0fe, #cdb4db);
+    background-attachment: fixed;
+    color: var(--texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================
+   ENCABEZADO
+   ========================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--rosa);
+    padding: 15px 40px;
+    box-shadow: 0 4px 12px var(--sombra);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .logo img {
+    width: 60px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+header .logo img:hover {
+    transform: rotate(-10deg) scale(1.05);
+}
+
+header .logo h1 {
+    font-size: 1.8em;
+    color: #d94f70;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: var(--rosa-fuerte);
+    color: var(--blanco);
+    box-shadow: 0 2px 8px var(--sombra);
+}
+
+/* ==========================
+   SECCIÓN DE BIENVENIDA
+   ========================== */
+section.formulario {
+    flex: 1;
+    background-color: var(--crema);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px var(--sombra);
+    padding: 40px 60px;
+    max-width: 850px;
+    margin: 60px auto;
+    animation: aparecer 0.8s ease;
+}
+
+section.formulario h2 {
+    color: var(--rosa-fuerte);
+    font-size: 2em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+section.formulario p {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+}
+
+section.formulario ul {
+    list-style: none;
+    padding: 0;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+section.formulario li {
+    background-color: var(--celeste);
+    margin: 10px 0;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+section.formulario li:hover {
+    background-color: var(--rosa);
+    color: #fff;
+    transform: scale(1.03);
+}
+
+/* ==========================
+   PIE DE PÁGINA
+   ========================== */
+footer {
+    background-color: var(--rosa);
+    text-align: center;
+    padding: 18px;
+    font-size: 0.95em;
+    color: var(--texto);
+    margin-top: auto;
+    box-shadow: 0 -2px 8px var(--sombra);
+}
+
+/* ==========================
+   ANIMACIONES Y RESPONSIVE
+   ========================== */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    section.formulario {
+        width: 90%;
+        padding: 30px;
+    }
+
+    section.formulario h2 {
+        font-size: 1.6em;
+    }
+}
