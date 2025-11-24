@@ -1,0 +1,13 @@
+com\mycompany\sistema_heladeria\CargarPerfilServlet.class
+com\mycompany\sistema_heladeria\UsuarioDAO.class
+com\mycompany\sistema_heladeria\ConexionBD.class
+com\mycompany\sistema_heladeria\JakartaRestConfiguration.class
+com\mycompany\sistema_heladeria\LogoutServlet.class
+com\mycompany\sistema_heladeria\RegistroServlet.class
+com\mycompany\sistema_heladeria\RecuperarClaveServlet.class
+com\mycompany\sistema_heladeria\resources\JakartaEE11Resource.class
+com\mycompany\sistema_heladeria\CambiarClaveServlet.class
+com\mycompany\sistema_heladeria\ActualizarPerfilServlet.class
+com\mycompany\sistema_heladeria\LoginServlet.class
+com\mycompany\sistema_heladeria\PerfilServlet.class
+com\mycompany\sistema_heladeria\Usuario.class

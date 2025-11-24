@@ -1,0 +1,558 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 23 nov 2025, 8:55:11 p. m.
+    Author     : Windows
+*/
+:root {
+  --mint: #50C9A8;
+  --green-dark: #2C7865;
+  --ice: #E8F9F1;
+  --blue-sky: #8FD6F1;
+  --white: #FFFFFF;
+  --gray: #6B7280;
+}
+
+body {
+  margin: 0;
+  background: var(--ice);
+  font-family: 'Poppins', sans-serif;
+  color: var(--green-dark);
+}
+
+/* Header */
+.admin-header {
+  background: linear-gradient(90deg, var(--mint), var(--blue-sky));
+  padding: 18px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.admin-header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.brand-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 3px solid white;
+}
+
+.sub {
+  margin: 0;
+  font-size: 14px;
+  opacity: .9;
+}
+
+.welcome {
+  padding: 8px 15px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 999px;
+}
+
+.btn-logout {
+  background: var(--white);
+  color: var(--green-dark);
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  margin-left: 12px;
+}
+
+/* Main container */
+.admin-main {
+  max-width: 1200px;
+  margin: 25px auto;
+  padding: 20px;
+}
+
+/* Cards menu */
+.grid-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.menu-card {
+  background: var(--white);
+  padding: 28px;
+  border-radius: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--green-dark);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+  transition: 0.2s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 28px rgba(0,0,0,0.12);
+}
+
+.card-icon {
+  font-size: 40px;
+  margin-bottom: 14px;
+}
+
+.highlight {
+  border: 3px solid var(--mint);
+}
+
+/* Summary cards */
+.summary {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.summary-card {
+  flex: 1;
+  min-width: 240px;
+  background: var(--white);
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.summary-card h4 {
+  margin: 0;
+  font-size: 14px;
+  color: var(--gray);
+}
+
+.summary-card p {
+  margin: 8px 0 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--green-dark);
+}
+/* ======== Estilos generales ======== */
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  color: var(--green-dark);
+}
+
+.btn-agregar {
+  background: var(--mint);
+  color: var(--white);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(80, 201, 168, 0.3);
+  transition: 0.2s ease-in-out;
+}
+
+.btn-agregar:hover {
+  filter: brightness(1.1);
+  transform: translateY(-3px);
+}
+
+
+/* === Tabla de productos === */
+.tabla-productos {
+  width: 90%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.tabla-productos thead {
+  background: var(--mint);
+  color: var(--white);
+}
+
+.tabla-productos th, .tabla-productos td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.tabla-productos tr:hover {
+  background: var(--ice);
+  transition: 0.2s ease-in;
+}
+
+.img-prod {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+/* ====== Botones Acción ====== */
+.acciones .btn-editar,
+.acciones .btn-eliminar {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 0 5px;
+  transition: 0.2s ease;
+}
+
+.btn-editar:hover { color: var(--mint); transform: scale(1.2); }
+.btn-eliminar:hover { color: red; transform: scale(1.2); }
+
+
+/* ====== Modal ====== */
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background: var(--white);
+  padding: 25px;
+  width: 380px;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  animation: aparecer 0.3s ease;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: var(--green-dark);
+  text-align: center;
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-guardar {
+  background: var(--mint);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+.btn-cancelar {
+  background: var(--gray);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+.btn-cancelar:hover { background: #525964; }
+.btn-guardar:hover { filter: brightness(1.1); }
+
+/* Animación suave */
+@keyframes aparecer {
+  from {opacity: 0; transform: scale(0.9);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+.menu-admin {
+    display: flex;
+    gap: 15px;
+    background: linear-gradient(90deg, var(--mint), var(--blue-sky));
+    padding: 12px 25px;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.menu-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.menu-link:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+.actual {
+    background: rgba(255,255,255,0.35);
+    color: var(--green-dark);
+}
+
+.salir {
+    margin-left: auto;
+    background-color: #e74c3c;
+}
+
+.salir:hover {
+    background-color: #c0392b;
+}
+
+/* ======== Gestión de Pedidos ======== */
+
+/* Tabla específica para pedidos */
+.tabla-pedidos {
+  width: 90%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.tabla-pedidos thead {
+  background: var(--mint);
+  color: var(--white);
+}
+
+.tabla-pedidos th, .tabla-pedidos td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.tabla-pedidos tr:hover {
+  background: var(--ice);
+  transition: 0.2s ease-in;
+}
+
+/* Estados visuales del pedido */
+.estado {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.Pendiente { background: #f1c40f; }
+.EnPreparacion { background: #3498db; }
+.Entregado { background: #2ecc71; }
+.Cancelado { background: #e74c3c; }
+
+/* Botones acción pedidos */
+.btn-entregar {
+  background: var(--mint);
+  padding: 6px 12px;
+  color: var(--white);
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.btn-cancelar {
+  background: #e74c3c;
+  padding: 6px 12px;
+  color: var(--white);
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.btn-entregar:hover,
+.btn-cancelar:hover {
+  filter: brightness(1.1);
+}
+
+/* Botón volver */
+.btn-volver {
+  background: var(--white);
+  color: var(--green-dark);
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-volver:hover {
+  background: rgba(255,255,255,0.8);
+}
+
+/* ======== Gestión de Usuarios ======== */
+
+/* Barra de búsqueda */
+.input-busqueda {
+  width: 280px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.input-busqueda:focus {
+  outline: none;
+  border-color: var(--mint);
+}
+
+/* Tabla usuarios */
+.tabla-usuarios {
+  width: 90%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.tabla-usuarios thead {
+  background: var(--mint);
+  color: var(--white);
+}
+
+.tabla-usuarios th, .tabla-usuarios td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.tabla-usuarios tr:hover {
+  background: var(--ice);
+}
+
+/* Botones acción */
+.btn-editar,
+.btn-eliminar {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-editar {
+  background: var(--mint);
+  color: white;
+}
+
+.btn-eliminar {
+  background: #e74c3c;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-editar:hover,
+.btn-eliminar:hover {
+  filter: brightness(1.1);
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background: var(--white);
+  padding: 25px;
+  width: 420px;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* ======== Reportes ======== */
+
+.report-container {
+  width: 90%;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+/* 🔹 Indicadores */
+.indicadores {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card-indicador {
+  background: var(--white);
+  padding: 20px;
+  width: 250px;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.card-indicador h4 {
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+
+.card-indicador p {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--green-dark);
+}
+
+/* 🔹 Gráficos */
+.graficos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 25px;
+}
+
+.grafico, .grafico-full {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.img-grafico {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  margin-top: 15px;
+}
+
+/* Tabla vendedores */
+.tabla-vendedores table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-vendedores th, .tabla-vendedores td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
